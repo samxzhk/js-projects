@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+*, *::after, *::before 
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+img 
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+body 
+{
+    background-color: #e9e9e9;
+    color:rgb(0, 0, 0);
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.container 
+{
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9772FB;
+    color:#EEF3D2;
+    border-radius: 3px;
+}
+
+.container > * 
+{
+    margin-block:0.7rem;
+}
+.container p 
+{
+    font-size:1.4rem;
+    font-weight: bolder;
+    margin-block:0.7rem;
+}
+.container input 
+{
+    border:none;
+    text-align: center;
+    padding:0.2rem;
+}
+
+.container button 
+{
+    display: inline-block;
+    padding:0.5rem 1rem;
+    border:none;
+    border-radius: 5px;
+    background-color: #705d9a;
+    color:#EEF3D2;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.container button:hover 
+{
+    transform: scale(1.05);
+    background-color: hsl(258, 26%, 25%);
+    color: #ffffff;
+}
+div.output 
+{
+    width: 50%;
+    height: 30px;
+    background-color: #947EC3;
+    color:#eef3d2;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
