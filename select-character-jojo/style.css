@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+:root 
+{
+    --url: url('https://64.media.tumblr.com/2205d227b6c6af4c923e90fa1a0e920d/tumblr_owegmcAHLL1vy2tgqo9_400.png');
+}
+*, *::after, *::before 
+{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img 
+{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+body 
+{
+    min-height: 100vh;
+    text-align: center;
+   
+}
+.characters-container 
+{
+    display: grid;
+    padding:1vw 2vw;
+    gap:0.5rem;
+    overflow: hidden;
+    width: 80%;
+    align-content: space-around;
+    justify-items: center;
+    margin:2rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+}
+.char 
+{
+    width: 200px;
+    font-family: 'Roboto slabe', sans-serif;
+    height: 200px;
+    max-height: 200px;
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.char:hover img 
+{
+    transform:scale(1.2);
+}
+.char img 
+{
+    transition: 0.5s;
+
+    width: 100%;
+    height: 100%;
+}
+
+.char::after
+{
+    content:attr(data-name);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size:26px;
+    text-transform: uppercase;
+    inset:0;
+    opacity: 0;
+    transition: 0.2s linear;
+    font-weight: bolder;
+    background-color: white;
+    transform:scale(0.5);
+   
+}
+
+.char:hover::after 
+{
+    inset:5%;
+    transform:scale(1);
+    opacity: 0.9;
+}
+.char:hover 
+{
+    outline:10px solid black;
+}
+
+.card
+{
+    width: 80%;
+    margin-block:2rem;
+    max-width: 300px;
+    height: 350px;
+    background-image: linear-gradient(90deg, #4D4C7D, #363062);
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.237);
+    cursor: pointer;
+    
+}
+.card > * 
+{
+    flex: 1 1 auto;
+}
+
+.card__img
+{
+  display: flex;
+  justify-content: center;
+  position: relative;
+z-index:0;
+
+  align-items: center;
+  background-image: linear-gradient(90deg, #4D4C7D, #363062);
+}
+.card__img .img 
+{
+    width: 50%;
+    aspect-ratio:  1 / 1;
+   
+    border-radius: 50%;
+    background-image: var(--url);
+    background-size: cover;
+    position: relative;
+    
+    background-position: center;
+}
+.card__img .img::after
+{
+    content:'';
+    position: absolute;
+    width: 100%;
+    top:0;
+    left:0;
+    height: 100%;
+    transform:scale(1.1);
+    border-radius: inherit;
+   
+    background-image: conic-gradient(
+        #F32424,
+        #EC994B,
+        #FFEF82,
+        #4E944F,
+        #4B7BE5,
+        #A85CF9,
+        #9900F0
+    );
+    animation: 1.5s linear infinite spin;
+    z-index:-1;
+}
+
+@keyframes spin {
+    0% 
+    {
+        transform: scale(1.1) rotateZ(0deg);
+    }
+    100% 
+    {
+        transform:scale(1.1) rotateZ(-360deg);
+    }
+    
+}
+
+.card__info 
+{
+   
+    font-size:1.4rem;
+    color:#EFEAD8;
+}
+.card__info > * 
+{
+    margin-block:0.5rem;
+}
+
