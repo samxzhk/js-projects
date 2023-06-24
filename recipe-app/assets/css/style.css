@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* ---------- css reset ------------*/
+img {max-inline-size: 100%; inline-size: 100%; display: block; object-fit: cover; object-position: center; block-size: auto;}
+li{list-style: none;}
+a{text-decoration: none;}
+input, button 
+{
+    background: none;
+    border: none;
+    outline: none;
+}
+.grid 
+{
+    display: grid;
+}
+/*=============== variables ================*/
+:root 
+{
+    --container-width: 1000px;
+    /* ----- colors -------*/
+    --tenne-tawny: #d65108;
+    --tenne-tawny-dark: #b54507;
+    /* ----- font -----*/
+    --poppins-font: "Poppins", sans-serif;
+}
+/* ------------ reusable css class -----------*/
+.container 
+{
+    margin-inline: auto;
+    max-inline-size: var(--container-width);
+    inline-size: 80%;
+    padding-block: 1.2rem 0.5rem;
+}
+
+@media screen and (max-width: 620px)
+{
+    .container 
+    {
+        inline-size: calc(100% - 1.5rem);
+    }
+}
+
+
+
+body 
+{
+    font-family: var(--poppins-font);
+}
+main 
+{
+    margin-block-end: 2rem;
+}
+
+/* ============= header =================*/
+.section__title 
+{
+    margin-block: 2rem;
+    text-align: center;
+}
+.bq__container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+blockquote
+{
+    display: inline-block;
+    text-align: center;
+    margin-inline: auto;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    margin-block-end: 1rem;
+}
+
+.search__container 
+{
+    
+    text-align: center;
+    position: relative;
+    border-radius: 1rem;
+    outline: 1px solid gray;
+    inline-size: 80%;
+    max-inline-size: 520px;
+    margin-inline: auto;
+}
+.form 
+{
+    padding-inline: 1.123rem;
+    padding-block: 0.6875rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.form input 
+{
+    inline-size: 80%;
+}
+.submit-btn 
+{
+    position: absolute;
+    background-color: var(--tenne-tawny);
+    block-size: 102%;
+    inset-block-start: 0;
+    inset-inline-end: -0.1rem;
+    border-end-end-radius: 10px;
+    border-start-end-radius: 10px;
+    inline-size: 40px;
+}
+.submit-btn 
+{
+    font-size: 1.2rem;
+    color: #fff;
+}
+.form__input::placeholder
+{
+    color: var(--tenne-tawny-dark);
+}
+
+/* ================= RESULT SECTION =============*/
+.result 
+{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 1.2rem;
+    row-gap: 1.7rem;
+    position: relative;
+}
+@media screen and (max-width: 480px)
+{
+    .result 
+    {
+        justify-items: center;
+    }
+}
+.card
+{
+    padding-block-end: 0.625rem;
+    position: relative;
+    max-inline-size: 380px;
+    text-align: center;
+    box-shadow: 0px 0px 6px 4px rgba(156, 157, 156, 0.25);
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+.card__name 
+{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-block: 1rem;
+}
+.card__meal
+{
+    position: absolute;
+    display: block;
+    inset-block-start: 0;
+    inset-inline-start: 0%;
+    inline-size: 100%;
+    max-block-size: 100%;
+    background-color: var(--tenne-tawny);
+    padding: 0.75rem;
+    line-height: 1.8;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(50%);
+    color: #fff;
+    border-radius: 0.425rem;
+    overflow-y: auto;
+    animation: append-animate .3s forwards;
+}
+@keyframes append-animate {
+	from {
+		opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+		transform: translateX(50%);
+	}
+	to {
+		opacity: 1;
+        pointer-events: initial;
+        visibility: visible;
+        transform: translateX(0);
+	}
+}
+.card__meal::-webkit-scrollbar
+{
+    inline-size: 4px;
+}
+.card__meal::-webkit-scrollbar-track
+{
+    background-color: var(--tenne-tawny-dark);
+}
+.card__meal::-webkit-scrollbar-thumb
+{
+    background-color: rgb(206, 180, 155);
+}
+
+.btn 
+{
+    display: inline-flex;
+    background-color: var(--tenne-tawny);
+    color: #fff;
+    padding-block: 0.5rem;
+    padding-inline: 1.8rem;
+    border-radius: 1rem;
+    margin-block-end: 1rem;
+}
+.btn__close
+{
+    position: absolute;
+    padding: 0.25rem;
+    font-size: 1.25rem;
+    color: #000;
+    background-color: #fff;
+    aspect-ratio:  1 / 1;
+    inset-block-start: 1rem;
+    inset-inline-end: 0.75rem;
+}
+.meal__name
+{
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-block: 0.6rem;
+}
+.meal__category 
+{
+    display: inline-flex;
+    background-color: #fff;
+    color: var(--tenne-tawny-dark);
+    font-size: 0.785rem;
+    padding-inline: 1rem;
+    padding-block: 0.625rem;
+    border-radius: 0.5rem;
+    margin-block-end: 0.825rem;
+}
+.instruction__title 
+{
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-block:1rem;
+}
+.meal__img 
+{
+    inline-size: 50px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: inline-block;
+    margin-block: 0.75rem;
+    margin-inline: auto;
+}
+.meal__video
+{
+    display: block;
+    font-size: 1.25rem;
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+@media screen and (min-width: 780px)
+{
+    .card
+    {
+        position: initial;
+    }
+    .result 
+    {
+        position: relative;
+    }
+    .card__meal
+{
+    position: fixed;
+    display: none;
+    margin-inline: auto;
+    max-inline-size: 50%;
+    background-color: var(--tenne-tawny);
+    padding: 0.75rem;
+    line-height: 1.8;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    inset-block-start: 5%;
+    inset-inline-start: 25%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 0.425rem;
+    overflow-y: auto;
+    
+    
+}
+.card__meal.active 
+{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+    
+}
+}
+
+
+/* ================== javascript ==============*/
+.card__meal.active 
+{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+    transform: translateX(0%);
+}
