@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Hero Search</title>
+    <meta name="author" content="samxzhk">
+    <meta name="description" content="a web app to search for super heroes">
+    <!---================== CSS =====================-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!---============== JAVASCRIPT ========================-->
+    <script src="./assets/js/script.js" defer></script>
+    <!--=============== REMIX ICON CDN =========================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="grid">
+   <div class="app container section">
+        <!--============ header =================-->
+       <header class="header container" id="header">
+       <h1 class="header__title section-title-center">
+        Super<span>Hero.</span>
+       </h1>
+       <div class="header__form">
+        <form class="form">
+            <input type="text" class="form__control" placeholder="Search for your superhero" name="search" autocomplete="off">
+            <button type="submit" class="search-btn">
+                <i class="ri-search-line"></i>
+            </button>
+            <div class="form__searchlist">
+ 
+            </div>
+        </form>
+       </div>
+       </header>
+       <main class="container section grid">
+        <div class="hero__image">
+            <img src="https://nationaltoday.com/wp-content/uploads/2020/09/Batman.jpg" alt="Batman" alt="Hero Image" class="hero__image-img">
+        </div>
+        <section class="hero__info container grid">
+            <div class="hero__info__container">
+                <h2 class="section__title section-title-center">
+                    Batman
+                </h2>
+                <!---===== button tabs ==========-->
+                <div class="hero__info__tabs">
+                    <button class="tab__head active" data-id="0">
+                        <span>powerstats</span>
+                        <i class="ri-sword-fill"></i>
+                    </button>
+                    <button class="tab__head" data-id="1">
+                        <span>biography</span>
+                        <i class="ri-book-2-fill"></i>
+                    </button>
+                    <button class="tab__head" data-id="2">
+                        <span>appearance</span>
+                        <i class="ri-user-3-fill"></i>
+                    </button>
+                    <button class="tab__head" data-id="3">
+                        <span>connections</span>
+                        <i class="ri-team-fill"></i>
+                    </button>
+                </div>
+             <!--============== tabs body =============-->
+             <article class="hero__info__content section container">
+                <ul class="tab__body active powerstats grid">
+                    <li class="tab__item">
+                        <div>
+                            <i class="ri-shield-line"></i>
+                            <span>intelligence</span>
+                        </div>
+                        <span>100</span>
+                    </li>
+                    <li class="tab__item">
+                        <div>
+                            <i class="ri-shield-line"></i>
+                            <span>strength</span>
+                        </div>
+                        <span>26</span>
+                    </li>
+                    <li class="tab__item">
+                        <div>
+                            <i class="ri-shield-line"></i>
+                            <span>speed</span>
+                        </div>
+                        <span>27</span>
+                    </li>
+                    <li class="tab__item">
+                        <div>
+                            <i class="ri-shield-line"></i>
+                            <span>durability</span>
+                        </div>
+                        <span>50</span>
+                    </li>
+                    <li class="tab__item">
+                        <div>
+                            <i class="ri-shield-line"></i>
+                            <span>power</span>
+                        </div>
+                        <span>47</span>
+                    </li>
+                    <li class="tab__item">
+                        <div>
+                            <i class="ri-shield-line"></i>
+                            <span>combat</span>
+                        </div>
+                        <span>100</span>
+                    </li>
+                </ul>
+                <ul class="tab__body biography grid">
+                    <li>
+                        <span>full name:</span>
+                        <span>terry mcginnis</span>
+                    </li>
+                    <li>
+                        <span>alter-egos:</span>
+                        <span>no alter egos found</span>
+                    </li>
+                    <li>
+                        <span>aliases:</span>
+                        <span>Batman II, The Tomorrow Knight, Batman Beyond</span>
+                    </li>
+                    <li>
+                        <span>place-of-birth:</span>
+                        <span>Gotham City, 25th Century</span>
+                    </li>
+                    <li>
+                        <span>first-appearance:</span>
+                        <span>Batman Beyond #1</span>
+                    </li>
+                    <li>
+                        <span>publisher:</span>
+                        <span>DC Comics</span>
+                    </li>
+                </ul>
+                <ul class="tab__body appearance grid">
+                    <li>
+                        <span>
+                            <i class="ri-star-line"></i>
+                            Gender
+                        </span>
+                        <span>
+                            Male
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="ri-star-line"></i>
+                            Race
+                        </span>
+                        <span>
+                            Human
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="ri-star-line"></i>
+                            Height
+                        </span>
+                        <span>
+                            5'10''
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="ri-star-line"></i>
+                            weight
+                        </span>
+                        <span>
+                            170lb
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="ri-star-line"></i>
+                            eye color
+                        </span>
+                        <span>
+                            blue
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="ri-star-line"></i>
+                            hair color
+                        </span>
+                        <span>
+                            black
+                        </span>
+                    </li>
+                 </ul>
+                 <ul class="tab__body connections grid">
+                        <li>
+                            <span>group--affiliation</span>
+                            <span>
+                                Batman Family,
+                                Justice League Unlimited
+                            </span>
+                        </li>
+                        <li>
+                            <span>relatives</span>
+                            <span>
+                                Bruce Wayne (biological father), 
+                                Warren McGinnis (father, deceased), Mary McGinnis (mother),
+                                Matt McGinnis (brother)
+                            </span>
+                        </li>
+                 </ul>
+             </article>
+            </div>
+        </section>
+       </main>
+   </div>
+</body>
+</html>
